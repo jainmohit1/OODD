@@ -2,17 +2,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @inquiry.user %>
+  <%= User.find(@inquiry.user_id).user_name %>
 </p>
 
 <p>
   <strong>Company:</strong>
-  <%= @inquiry.company %>
+  <%= Company.find(@inquiry.company_id).name %>
 </p>
 
 <p>
   <strong>House:</strong>
-  <%= @inquiry.house %>
+  <%= House.find(@inquiry.house_id).location %>
 </p>
 
 <p>

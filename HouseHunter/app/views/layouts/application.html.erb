@@ -5,14 +5,15 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 <% if current_user %>
   <!-- current_user will return true if a user is logged in -->
-  <%= "Logged in as #{current_user.user_name}" %> | <%= link_to 'Home', users_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+  <%= "Logged in as #{current_user.user_name}" %> | <%= link_to 'Home', users_path %>
+  | <%= link_to 'Log Out', logout_path, method: :delete %>
 <% else %>
   <!-- not logged in -->
   <h3>You are not signed in!</h3>

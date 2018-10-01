@@ -17,9 +17,9 @@
   <tbody>
     <% @inquiries.each do |inquiry| %>
       <tr>
-        <td><%= inquiry.user %></td>
-        <td><%= inquiry.company %></td>
-        <td><%= inquiry.house %></td>
+        <td><%= User.find(inquiry.user_id).user_name %></td>
+        <td><%= Company.find(inquiry.company_id).name %></td>
+        <td><%= House.find(inquiry.house_id).location %></td>
         <td><%= inquiry.subject %></td>
         <td><%= inquiry.message %></td>
         <td><%= link_to 'Show', inquiry %></td>

@@ -15,6 +15,7 @@ class InquiriesController < ApplicationController
   # GET /inquiries/new
   def new
     @inquiry = Inquiry.new
+
   end
 
   # GET /inquiries/1/edit
@@ -26,6 +27,8 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
 
+    @inquiry.user_id = current_user.id.to_s
+    @inquiry.company_id = House.find(inquiry_params[:house_id]).company_id
     respond_to do |format|
       if @inquiry.save
         format.html { redirect_to @inquiry, notice: 'Inquiry was successfully created.' }

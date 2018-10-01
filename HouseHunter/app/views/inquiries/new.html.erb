@@ -3,7 +3,7 @@
   <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer"%>
 <%= render 'form', inquiry: @inquiry %>
   <%else%>
-    <h3> Only users or admin can submit inquiry. </h3>
+    <h3> Only buyers or admin can submit inquiry. </h3>
   <% end %>
   <% else %>
 <%= link_to "You must be logged in to submit inquiries.", login_path %>
