@@ -35,8 +35,8 @@
       <td><%= house.current_owner %></td>
       <td><%= house.contact_info_realtor %></td>
       <td><%= link_to 'Show', house %></td>
-      <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" || house.user_id == session[:id]%>
-      <td><%= link_to 'Inquire House', inquiries_path(house) %></td>
+      <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" || house.user_id == session[:id] %>
+        <td><%= link_to 'Inquire House', inquiries_path(house) %></td>
       <% end %>
       <% if User.find(session[:id]).role_type == "admin" || house.user_id == session[:id] %>
 
@@ -51,6 +51,6 @@
 </table>
 
 <br>
-<% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "realtor"%>
-<%= link_to 'New House', new_house_path %>
+<% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "realtor" %>
+  <%= link_to 'New House', new_house_path %>
 <% end %>
