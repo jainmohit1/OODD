@@ -1,4 +1,4 @@
 class UserCompanyMapping < ApplicationRecord
-  belongs_to :user
-  belongs_to :company
+  belongs_to :user, :autosave => true
+  belongs_to :company, :autosave => true
 end

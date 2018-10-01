@@ -1,5 +1,7 @@
 class User < ApplicationRecord
+  has_many :user_company_mappings, :autosave => true
   has_secure_password
+  
   validates :user_name, presence: true, uniqueness: true
   validates :password, presence: true
   
