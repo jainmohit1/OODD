@@ -36,17 +36,11 @@
       <td><%= house.contact_info_realtor %></td>
       <td><%= link_to 'Show', house %></td>
 
-      <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" || house.user_id == session[:id] %>
-        <td><%= link_to 'Inquire House', inquiries_path(house) %></td>
-      <% end %>
-
       <% if User.find(session[:id]).role_type == "admin" || house.user_id == session[:id] %>
 
         <td><%= link_to 'Edit', edit_house_path(house) %></td>
       <% end %>
-      <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" || house.user_id == session[:id] %>
-        <p> <%= link_to 'Inquire House', inquiries_path %> </p>
-      <% end %>
+
       <% if User.find(session[:id]).role_type == "admin" || house.user_id == session[:id] %>
         <td><%= link_to 'Destroy', house, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       <% end %>
@@ -58,4 +52,7 @@
 <br>
 <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "realtor" %>
   <%= link_to 'New House', new_house_path %>
+<% end %>
+<% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" || house.user_id == session[:id] %>
+  <p> <%= link_to 'Inquire House', inquiries_path %> </p>
 <% end %>
