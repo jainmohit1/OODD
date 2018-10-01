@@ -1,5 +1,11 @@
 <h1>New House Interest List</h1>
-
-<%= render 'form', house_interest_list: @house_interest_list %>
-
+<% if current_user %>
+  <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" %>
+    <%= render 'form', house_interest_list: @house_interest_list %>
+  <% else %>
+    <h3> Only buyers or admin can submit inquiry. </h3>
+  <% end %>
+<% else %>
+  <%= link_to "You must be logged in to submit inquiries.", login_path %>
+<% end %>
 <%= link_to 'Back', house_interest_lists_path %>
