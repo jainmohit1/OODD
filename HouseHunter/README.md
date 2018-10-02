@@ -6,29 +6,15 @@ House Buying and selling system
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
-While signing in use one of the below information
+## While signing in use one of the below information
 ## Types of roles:
 ###### admin
 ###### realtor
 ###### buyer
 
-While signing in use one of the below information
-Things you may want to cover:
+## Types of roles:
+###### phone
+###### text
+###### email
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Phone Number should be 10 digit. 
