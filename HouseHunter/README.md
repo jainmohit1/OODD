@@ -6,6 +6,13 @@ House Buying and selling system
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
+While signing in use one of the below information
+## Types of roles:
+###### admin
+###### realtor
+###### buyer
+
+While signing in use one of the below information
 Things you may want to cover:
 
 * Ruby version
