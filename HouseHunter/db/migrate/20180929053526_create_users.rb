@@ -21,7 +21,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
   #                         phone_number: 9194568765,
   #                         preferred_contact_method: 'text',
   #                         role_type: 'text'
-  # end
+   end
   def down
     drop_table :users
   end
