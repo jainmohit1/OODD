@@ -18,3 +18,12 @@ House Buying and selling system
 ###### email
 
 ## Phone Number should be 10 digit. 
+
+## Run the project
+
+###### Download the zip
+###### open the project in the editor
+###### excecute the command 'bundle install'
+###### excecute the command 'bundle update'
+###### excecute the command 'rake db:migrate'
+###### excecute the command 'rake db:seed'
