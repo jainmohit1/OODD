@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= select("inquiry_reply", "user_id", User.all.collect{ |c| [ c.user_name, c.id] })  %>
   </div>
 
   <div class="field">
