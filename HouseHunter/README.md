@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+House Buying and selling system
 
-Things you may want to cover:
+## Admin Username and Password
+###### Username - admin@ncsu.edu
+###### Password - admin
 
-* Ruby version
+## While signing in use one of the below information
+## Types of roles:
+###### admin
+###### realtor
+###### buyer
 
-* System dependencies
+## Types of roles:
+###### phone
+###### text
+###### email
 
-* Configuration
+## Phone Number should be 10 digit. 
 
-* Database creation
+## Run the project
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###### Download the zip
+###### open the project in the editor
+###### excecute the command 'bundle install'
+###### excecute the command 'bundle update'
+###### excecute the command 'rake db:migrate'
+###### excecute the command 'rake db:seed'
