@@ -1,7 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+House Buying and selling system
+
+## Admin Username and Password
+###### Username - admin@ncsu.edu
+###### Password - admin
 
 Things you may want to cover:
 
