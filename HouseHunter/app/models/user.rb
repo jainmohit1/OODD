@@ -13,6 +13,6 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { is: 10,
                                                      too_long: "%{count} digits maximum allowed" }
   
-  validates :role_type,presence: true, inclusion: { in: %w(admin buyer realtor),
+  validates :role_type,presence: true, inclusion: { in: %w(buyer realtor),
                                                     message: "%{value} is not a valid role type" }
 end
