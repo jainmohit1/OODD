@@ -8,7 +8,6 @@ House Buying and selling system
 
 ## While signing in use one of the below information
 ## Types of roles:
-###### admin
 ###### realtor
 ###### buyer
 
@@ -16,8 +15,6 @@ House Buying and selling system
 ###### phone
 ###### text
 ###### email
-
-## Phone Number should be 10 digit. 
 
 ## Run the project
 
