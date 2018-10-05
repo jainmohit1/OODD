@@ -1,8 +1,8 @@
-# README
+# House Selling and Buying Tracking System
 
 House Buying and selling system
 
-## Admin Username and Password
+## Admin Username and Password (Right now this doesn't work on Heroku server, but if you run the project locally it will work)Steps to run is given below.
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
