@@ -1,27 +1,29 @@
-# README
+# House Selling and Buying Tracking System
 
 House Buying and selling system
 
-## Admin Username and Password
+## Admin Username and Password (Right now this doesn't work on Heroku server, but if you run the project locally it will work)Steps to run is given below.
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
-Things you may want to cover:
+## While signing in use one of the below information
+## Types of roles:
+###### admin
+###### realtor
+###### buyer
 
-* Ruby version
+## Types of roles:
+###### phone
+###### text
+###### email
 
-* System dependencies
+## Phone Number should be 10 digit. 
 
-* Configuration
+## Run the project
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###### Download the zip
+###### open the project in the editor
+###### excecute the command 'bundle install'
+###### excecute the command 'bundle update'
+###### excecute the command 'rake db:migrate'
+###### excecute the command 'rake db:seed'

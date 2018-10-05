@@ -4,19 +4,25 @@
 
 <table>
   <thead>
-    <tr>
-      <th>User</th>
-      <th>Company</th>
-      <th>House</th>
-      <th>Subject</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>User ID</th>
+    <th>User</th>
+    <th>Company</th>
+    <th>House</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @inquiries.each do |inquiry| %>
+
+  <% @inquiries.each do |inquiry| %>
+    <% if User.find(session[:id]).role_type == "admin" || (User.find(session[:id]).role_type == "buyer" && (inquiry.user_id == User.find(session[:id]).id)) ||
+        (User.find(session[:id]).role_type == "realtor" )%>
       <tr>
+        <td><%= User.find(inquiry.user_id).id %></td>
+
         <td><%= User.find(inquiry.user_id).user_name %></td>
         <td><%= Company.find(inquiry.company_id).name %></td>
         <td><%= House.find(inquiry.house_id).location %></td>
@@ -24,15 +30,21 @@
         <td><%= inquiry.message %></td>
         <td><%= link_to 'Show', inquiry %></td>
         <td><%= link_to 'Edit', edit_inquiry_path(inquiry) %></td>
-        <td><%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', inquiry, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
+
+  <% end %>
+
   </tbody>
 </table>
 
 <br>
-<% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer"  %>
-<%= link_to 'New Inquiry', new_inquiry_path %>
-  <% else %>
+<% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" %>
+  <%= link_to 'New Inquiry', new_inquiry_path %>
+<% else %>
+  <% yield %>
   <%= link_to 'Respond to Inquiry', inquiry_replies_path %>
+  <!--  <p>Respond to Inquiry</p>-->
+  <%#= render 'form', inquiry_reply: @inquiry_reply %>
 <% end %>
