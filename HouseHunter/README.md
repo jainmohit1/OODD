@@ -2,13 +2,12 @@
 
 House Buying and selling system
 
-## Admin Username and Password (Right now this doesn't work on Heroku server, but if you run the project locally it will work)Steps to run is given below.
+## Admin Username and Password
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
 ## While signing in use one of the below information
 ## Types of roles:
-###### admin
 ###### realtor
 ###### buyer
 
@@ -16,8 +15,6 @@ House Buying and selling system
 ###### phone
 ###### text
 ###### email
-
-## Phone Number should be 10 digit. 
 
 ## Run the project
 
