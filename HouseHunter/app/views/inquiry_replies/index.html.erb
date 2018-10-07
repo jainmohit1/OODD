@@ -8,8 +8,8 @@
     <tr>
       <th>User</th>
       <th>House</th>
-      <th>Subject</th>
-      <th>Message</th>
+      <th>Inquiry</th>
+      <th>Reply</th>
       <th>Company</th>
       <th colspan="3"></th>
     </tr>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= inquiry_reply.user.user_name %></td>
         <td><%= inquiry_reply.house.location %></td>
-        <td><%= inquiry_reply.inquiry.subject %></td>
+        <td><%= inquiry_reply.inquiry.message %></td>
         <td><%= inquiry_reply.message %></td>
         <td><%= inquiry_reply.company.name %></td>
         <% if User.find(session[:id]).role_type == "realtor" || User.find(session[:id]).role_type == "admin"%>

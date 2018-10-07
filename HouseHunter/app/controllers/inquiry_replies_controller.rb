@@ -11,9 +11,7 @@ class InquiryRepliesController < ApplicationController
   # GET /inquiry_replies/1
   # GET /inquiry_replies/1.json
   def show
-    @inquiry = Inquiry.find(params[:id])
-    @inquiry_reply = InquiryReply.where("inquiry_id = ? limit 1", @inquiry.id)
- 
+
   end
 
   # GET /inquiry_replies/new
