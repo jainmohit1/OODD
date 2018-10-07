@@ -11,6 +11,7 @@ class InquiryRepliesController < ApplicationController
   # GET /inquiry_replies/1
   # GET /inquiry_replies/1.json
   def show
+
   end
 
   # GET /inquiry_replies/new
