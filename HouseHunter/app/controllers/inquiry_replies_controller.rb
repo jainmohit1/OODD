@@ -5,16 +5,26 @@ class InquiryRepliesController < ApplicationController
   # GET /inquiry_replies.json
   def index
     @inquiry_replies = InquiryReply.all
+
   end
 
   # GET /inquiry_replies/1
   # GET /inquiry_replies/1.json
   def show
+    @inquiry = Inquiry.find(params[:id])
+    @inquiry_reply = InquiryReply.where("inquiry_id = ? limit 1", @inquiry.id)
+    puts @inquiry_reply.house_id
+    puts @inquiry_reply
   end
 
   # GET /inquiry_replies/new
   def new
     @inquiry_reply = InquiryReply.new
+    @inquiry = Inquiry.find(params[:inquiry])
+    flash[:user_id] = @inquiry.user_id
+    flash[:house_id] = @inquiry.house_id
+    flash[:company_id] = @inquiry.company_id
+    flash[:inquiry_id] = @inquiry.id
   end
 
   # GET /inquiry_replies/1/edit
@@ -25,7 +35,10 @@ class InquiryRepliesController < ApplicationController
   # POST /inquiry_replies.json
   def create
     @inquiry_reply = InquiryReply.new(inquiry_reply_params)
-
+    @inquiry_reply.user_id = flash[:user_id]
+    @inquiry_reply.house_id = flash[:house_id]
+    @inquiry_reply.inquiry_id = flash[:inquiry_id]
+    @inquiry_reply.company_id =flash[:company_id]
     respond_to do |format|
       if @inquiry_reply.save
         format.html { redirect_to @inquiry_reply, notice: 'Inquiry reply was successfully created.' }
