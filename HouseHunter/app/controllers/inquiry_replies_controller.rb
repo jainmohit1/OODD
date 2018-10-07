@@ -13,8 +13,7 @@ class InquiryRepliesController < ApplicationController
   def show
     @inquiry = Inquiry.find(params[:id])
     @inquiry_reply = InquiryReply.where("inquiry_id = ? limit 1", @inquiry.id)
-    puts @inquiry_reply.house_id
-    puts @inquiry_reply
+ 
   end
 
   # GET /inquiry_replies/new
