@@ -1,16 +1,20 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
-  
+
   # def initialize
   #   @editable = true
   # end
   # GET /houses
   # GET /houses.json
-  def index
-    
-    @houses = House.all
 
-  
+  def index
+  if params[:location || :style || :start_price || :end_price]
+
+    @houses = House.where('location LIKE ? and style LIKE ? and price_list BETWEEN ? AND ?',
+                          "%#{params[:location]}%","%#{params[:style]}%", params[:start_price], params[:end_price])
+  else
+    @houses = House.all
+  end
   end
   
   # GET /houses/1
