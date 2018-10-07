@@ -4,37 +4,37 @@
       <h2><%= pluralize(inquiry_reply.errors.count, "error") %> prohibited this inquiry_reply from being saved:</h2>
 
       <ul>
-      <% inquiry_reply.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% inquiry_reply.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= select("inquiry_reply", "user_id", User.all.collect{ |c| [ c.user_name, c.id] })  %>
-  </div>
+<!--    <div class="field">-->
+  <%#= form.label :user_id %>
+  <%#= select("inquiry_reply", "user_id", User.all.collect { |c| [c.id]}) %>
+<!--    </div>-->
 
   <div class="field">
     <%= form.label :house_id %>
-    <%= form.text_field :house_id %>
+    <%= select("inquiry", "house_id", House.all.collect {|c| [c.location, c.id]}) %>
   </div>
 
-  <div class="field">
-    <%= form.label :inquiry_id %>
-    <%= form.text_field :inquiry_id %>
-  </div>
+<!--    <div class="field">-->
+  <%#= form.label :inquiry_id %>
+  <%#= form.text_field :inquiry_id %>
+<!--    </div>-->
 
   <div class="field">
     <%= form.label :message %>
     <%= form.text_field :message %>
   </div>
 
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
-  </div>
+<!--    <div class="field">-->
+  <%#= form.label :company_id %>
+  <%#= form.text_field :company_id %>
+<!--    </div>-->
 
   <div class="actions">
     <%= form.submit %>

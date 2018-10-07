@@ -1,39 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Inquiry Replies</h1>
-<% %>
-<% if User.find(session[:id]).role_type == "realtor" %>
-  <table>
-    <thead>
+<%  %>
+<% if User.find(session[:id]).role_type == "realtor" || InquiryReply.where("user_id = ?", User.find(session[:id]).id) || User.find(session[:id]).role_type == "admin"%>
+<table>
+  <thead>
     <tr>
       <th>User</th>
       <th>House</th>
-      <th>Inquiry</th>
+      <th>Subject</th>
       <th>Message</th>
       <th>Company</th>
       <th colspan="3"></th>
     </tr>
-    </thead>
+  </thead>
 
-    <tbody>
+  <tbody>
     <% @inquiry_replies.each do |inquiry_reply| %>
       <tr>
-        <td><%= inquiry_reply.user %></td>
-        <td><%= inquiry_reply.house %></td>
-        <td><%= inquiry_reply.inquiry %></td>
+        <td><%= inquiry_reply.user.user_name %></td>
+        <td><%= inquiry_reply.house.location %></td>
+        <td><%= inquiry_reply.inquiry.subject %></td>
         <td><%= inquiry_reply.message %></td>
-        <td><%= inquiry_reply.company %></td>
+        <td><%= inquiry_reply.company.name %></td>
+        <% if User.find(session[:id]).role_type == "realtor" || User.find(session[:id]).role_type == "admin"%>
         <td><%= link_to 'Show', inquiry_reply %></td>
         <td><%= link_to 'Edit', edit_inquiry_reply_path(inquiry_reply) %></td>
-        <td><%= link_to 'Destroy', inquiry_reply, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td><%= link_to 'Destroy', inquiry_reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
       </tr>
     <% end %>
-    </tbody>
-  </table>
+  </tbody>
+</table>
 
-  <br>
-
-  <%= link_to 'New Inquiry Reply', new_inquiry_reply_path %>
-<% else %>
-  <p> Only realtors can view inquiry replies</p>
+<br>
+  <% if User.find(session[:id]).role_type == "realtor" || User.find(session[:id]).role_type == "admin"%>
+<%#= link_to 'New Inquiry Reply', inquiry_replies_path %>
+<% end %>
 <% end %>
