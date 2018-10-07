@@ -39,18 +39,17 @@
 
     <% end %>
   <% end %>
-  <% if User.find(session[:id]).role_type == "buyer" %>
+  <% if User.find(session[:id]).role_type == "buyer" || User.find(session[:id]).role_type == "admin" %>
     <td><%= link_to 'View Replies', inquiry_replies_path %></td>
   <% end %>
   </tbody>
 </table>
 
-<br>
+
 <% if User.find(session[:id]).role_type == "admin" || User.find(session[:id]).role_type == "buyer" %>
   <%= link_to 'New Inquiry', new_inquiry_path %>
 <% else %>
 
   <%= link_to 'Show all Replies', inquiry_replies_path %>
-  <!--  <p>Respond to Inquiry</p>-->
-  <%#= render 'form', inquiry_reply: @inquiry_reply %>
+ 
 <% end %>
