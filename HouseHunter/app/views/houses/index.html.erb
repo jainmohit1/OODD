@@ -2,6 +2,15 @@
 
 <h1>Houses</h1>
 
+<%= form_tag(houses_path, :method => 'get') do %>
+  Location <%= text_field_tag :location, params[:location]  %>
+  Style <%= text_field_tag :style, params[:style] %>
+  Start Price : <%= text_field_tag :start_price, params[:start_price] %>
+  End Price : <%= text_field_tag :end_price, params[:end_price] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+<br>
+<br>
 <table>
   <thead>
   <tr>
