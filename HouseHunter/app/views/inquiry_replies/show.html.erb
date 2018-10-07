@@ -2,17 +2,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @inquiry_reply.user %>
+  <%= User.find(@inquiry_reply.user_id).user_name %>
 </p>
 
 <p>
   <strong>House:</strong>
-  <%= @inquiry_reply.house %>
+  <%= @inquiry_reply.house.location %>
 </p>
 
 <p>
   <strong>Inquiry:</strong>
-  <%= @inquiry_reply.inquiry %>
+  <%= @inquiry_reply.inquiry.message %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @inquiry_reply.company %>
+  <%= @inquiry_reply.company.name %>
 </p>
 
 <%= link_to 'Edit', edit_inquiry_reply_path(@inquiry_reply) %> |
