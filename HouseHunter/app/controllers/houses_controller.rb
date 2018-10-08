@@ -9,7 +9,7 @@ class HousesController < ApplicationController
   
   def index
     if params[:location || :style || :start_price || :end_price]
-      
+      # Filtering
       @houses = House.where('location LIKE ? and style LIKE ? and price_list BETWEEN ? AND ?',
                             "%#{params[:location]}%", "%#{params[:style]}%", params[:start_price], params[:end_price])
     else
