@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<h4>Hello, <%= @user.first_name %></h4>
+<p>
+  You have a new reply from the realtor for the house located at <%= @house.location %>
+</p>
+<p>Your Query : <%= @inquiry.message %></p>
+<p>Reply : <%= @inquiry_reply.message %></p>
+<br>
+<p>Visit our website <%= @url %></p>
+<br>
+<p>Thank You!</p>
+</body>
+</html>
