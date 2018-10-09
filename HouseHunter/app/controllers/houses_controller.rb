@@ -10,6 +10,7 @@ class HousesController < ApplicationController
   def index
     if params[:location || :style || :start_price || :end_price]
       # Filtering
+      # TODO check if user has not provide values for range dont include that in the query
       @houses = House.where('location LIKE ? and style LIKE ? and price_list BETWEEN ? AND ?',
                             "%#{params[:location]}%", "%#{params[:style]}%", params[:start_price], params[:end_price])
     else
