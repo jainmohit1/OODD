@@ -2,7 +2,7 @@
 
 House Buying and selling system
 
-## Admin Username and Password
+## Admin Username and Password (Please delete browser cookies)
 ###### Username - admin@ncsu.edu
 ###### Password - admin
 
