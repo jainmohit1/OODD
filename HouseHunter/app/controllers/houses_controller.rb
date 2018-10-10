@@ -6,11 +6,16 @@ class HousesController < ApplicationController
   # end
   # GET /houses
   # GET /houses.json
-  def index
-    
-    @houses = House.all
-
   
+  def index
+    if params[:location || :style || :start_price || :end_price]
+      # Filtering
+      # TODO check if user has not provide values for range dont include that in the query
+      @houses = House.where('location LIKE ? and style LIKE ? and price_list BETWEEN ? AND ?',
+                            "%#{params[:location]}%", "%#{params[:style]}%", params[:start_price], params[:end_price])
+    else
+      @houses = House.all
+    end
   end
   
   # GET /houses/1
@@ -25,7 +30,7 @@ class HousesController < ApplicationController
   
   # GET /houses/1/edit
   def edit
-
+  
   end
   
   # POST /houses
@@ -33,7 +38,7 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
     @house.user_id = session[:id]
-    
+
     respond_to do |format|
       if @house.save
         format.html {redirect_to @house, notice: 'House was successfully created.'}
@@ -67,13 +72,13 @@ class HousesController < ApplicationController
       respond_to do |format|
         format.html {redirect_to houses_url, notice: 'House was successfully destroyed.'}
         format.json {head :no_content}
-        end
+      end
     else
       respond_to do |format|
         format.html {redirect_to houses_url, notice: 'Permission denied to remove the house.'}
         format.json {head :no_content}
       end
-      
+    
     end
   end
   
@@ -82,11 +87,11 @@ class HousesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_house
     @house = House.find(params[:id])
-    
+  
   end
   
   # Never trust parameters from the scary internet, only allow the white list through.
   def house_params
-    params.require(:house).permit(:company_id, :location, :square_footage, :year_built, :style, :price_list, :number_of_floors, :basement, :current_owner, :contact_info_realtor, :user_id)
+    params.require(:house).permit(:company_id, :location, :square_footage, :year_built, :style, :price_list, :number_of_floors, :basement, :current_owner, :contact_info_realtor, :user_id, :image)
   end
 end
