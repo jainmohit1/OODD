@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :user_name, presence: true, uniqueness: true
   validates :password, presence: true
   
-  validates :email_address, presence: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create}
+  validates :email_address, presence: true, uniqueness: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create}
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :preferred_contact_method, presence: true, inclusion: {in: %w(email text phone),
