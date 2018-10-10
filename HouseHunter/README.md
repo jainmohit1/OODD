@@ -11,7 +11,7 @@ House Buying and selling system
 ###### realtor
 ###### buyer
 
-## Types of roles:
+## Preferred contact method:
 ###### phone
 ###### text
 ###### email
