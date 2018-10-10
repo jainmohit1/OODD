@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_many :user_company_mappings, :autosave => true, dependent: :delete_all
-  has_many :inquiries ,dependent: :delete_all
   has_many :inquiry_replies , dependent: :delete_all
+  has_many :inquiries ,dependent: :delete_all
+  
   has_many :house_interest_lists, dependent: :delete_all
   has_secure_password
   
