@@ -49,6 +49,12 @@
   <strong>Contact info realtor:</strong>
   <%= @house.contact_info_realtor %>
 </p>
+<p>
+  <strong>Image</strong>
+
+  <%=image_tag(@house.image_url, alt: 'Image')
+  %>
+</p>
 <% if User.find(session[:id]).role_type == "admin" || @house.user_id == session[:id] %>
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <% end %>

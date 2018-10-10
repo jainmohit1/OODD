@@ -1,19 +1,19 @@
-<%= form_with(model: house, local: true) do |form| %>
-  <% if house.errors.any? %>
+<%= form_for @house, local: true, html: {multipart: true} do |form| %>
+  <% if @house.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+      <h2><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h2>
 
       <ul>
-      <% house.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @house.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :company_id %>
-    <%= select("house", "company_id", Company.all.collect{ |c| [ c.name, c.id] })  %>
+    <%= select("house", "company_id", Company.all.collect {|c| [c.name, c.id]}) %>
   </div>
 
   <div class="field">
@@ -60,6 +60,11 @@
   <div class="field">
     <%= form.label :contact_info_realtor %>
     <%= form.text_field :contact_info_realtor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">
