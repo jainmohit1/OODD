@@ -4,7 +4,7 @@ class InquiryRepliesController < ApplicationController
   # GET /inquiry_replies
   # GET /inquiry_replies.json
   def index
-    @inquiry_replies = InquiryReply.all
+    @inquiry_replies = InquiryReply.where("company_id = ", User.find(session[:id]).company_id)
   
   end
   
