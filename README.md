@@ -11,7 +11,8 @@ A user trying to buy or sell a house, can easily do so using our application.
 ###### realtor
 ###### buyer
 
-### Prerequisites
+
+#### Prerequisites
 
 Please make sure you do the following once you have cloned the repository to your local machine:
 1. Install postgresql on your MAC using the following command in your RubyMine Terminal.
@@ -26,13 +27,24 @@ rake db:migrate
 rake db:seed
 ```
 
-#### While testing the application, please note:
+# While testing the application, please note:
 * A user can only sign-up as a realtor or buyer.
 * Once signed-up, they can navigate to Home/Log In to login with their username and password.
 
 ## Admin Module:
-* An admin can view, create, edit, and destroy companies, houses and users (realtor/buyer).
+* An admin can view, edit, create new and destroy existing users (realtor/buyer) as seen on the Home page.
+![Admin Home](https://mysterious-temple-73036.herokuapp.com/AdminHome.png)
 
+* They can create a new company by going to List all companies -> New Company, where they can view, edit or destory existing companies.
+![List Companies](https://mysterious-temple-73036.herokuapp.com/ListCompanies.png)
+
+* They can go to List Houses to view existing listed houses and further to New House to add a new house.
+
+* They can view all inquiries that have been asked by any buyer and also the replies by going to House Inquiries -> View Replies.
+![View Inquiries](https://mysterious-temple-73036.herokuapp.com/ViewInquiries.png)
+
+* They can add a house to the Intereset List which consists of the houses a user is interested in by going to List all buyers -> ADD House to interest list.
+![Interest List](https://mysterious-temple-73036.herokuapp.com/AddHouseInterestList.png)
 
 ## Realtor Module:
 * They can view all the companies, houses and buyers present.
