@@ -39,10 +39,10 @@
   <strong>Role type:</strong>
   <%= @user.role_type %>
 </p>
-
+<% if session[:id].present? %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
+<% end %>
 <br><br>
 <% if session[:id].present? %>
   <%= link_to "List all companies", companies_url %> <%= link_to "List all houses", houses_url %>

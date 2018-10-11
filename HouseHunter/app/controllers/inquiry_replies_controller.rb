@@ -4,8 +4,13 @@ class InquiryRepliesController < ApplicationController
   # GET /inquiry_replies
   # GET /inquiry_replies.json
   def index
-    @inquiry_replies = InquiryReply.all
-  
+    if User.find(session[:id]).role_type == "admin"
+      @inquiry_replies = InquiryReply.all
+    elsif User.find(session[:id]).role_type == "buyer"
+      @inquiry_replies = InquiryReply.where("user_id = ?", session[:id])
+    else
+      @inquiry_replies = InquiryReply.where("company_id = ?", UserCompanyMapping.find_by("user_id = ?", session[:id]))
+    end
   end
   
   # GET /inquiry_replies/1
