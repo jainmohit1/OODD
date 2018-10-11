@@ -30,7 +30,7 @@
       <% if User.find(session[:id]).role_type == "admin" || UserCompanyMapping.find_by_company_id(company.id).user_id == session[:id] %>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
       <% end %>
-      <% if User.find(session[:id]).role_type == "admin" || UserCompanyMapping.find_by_company_id(company.id).user_id == session[:id] %>
+      <% if User.find(session[:id]).role_type == "admin" %>
         <td><%= link_to 'Destroy', company, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       <% end %>
     </tr>
