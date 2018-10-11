@@ -30,13 +30,19 @@ rake db:seed
 * A user can only sign-up as a realtor or buyer.
 * Once signed-up, they can navigate to Home/Log In to login with their username and password.
 
+## Admin Module:
+* An admin can view, create, edit, and destroy companies, houses and users (realtor/buyer).
+
+
 ## Realtor Module:
 * They can view all the companies, houses and buyers present.
-* They can create a new company by going to [List all companies](https://mysterious-temple-73036.herokuapp.com/companies) -> [New Company](https://mysterious-temple-73036.herokuapp.com/companies/new).
+* They can create a new company by going to List all companies -> New Company.
 * They now will belong to this company.
-* They can go to [List Houses](https://mysterious-temple-73036.herokuapp.com/houses) -> [New House](https://mysterious-temple-73036.herokuapp.com/houses/new) to add a new house. They will also be able to upload images regarding the property if they wish to.
+* They can go to List Houses -> New House to add a new house. They will also be able to upload images regarding the property if they wish to.
 * They can filter the available houses on the basis of Location, Style, Start Price, End Price. (Please make sure you enter text as mentioned in the fields listed under "List all houses.")
 * They can Destroy/Edit only those houses created by them.
+* One the List Houses -> House Inquiries page, he can view all the inquiries posted by buyers. He can now Reply to these.
+* He can edit his Profile by going to his home page Home -> Edit.
 
 
 ## Preferred contact method:
