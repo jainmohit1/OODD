@@ -27,22 +27,22 @@ rake db:seed
 
 ## Admin Module:
 * An admin can view, edit, create new and destroy existing users (realtor/buyer) as seen on the Home page.
-![Admin Home](https://mysterious-temple-73036.herokuapp.com/AdminHome.png)
+![Admin Home](https://mysterious-temple-73036.herokuapp.com/AdminHome.png?s=200)
 
 * They can create a new company by going to List all companies -> New Company, where they can view, edit or destory existing companies.
-![List Companies](https://mysterious-temple-73036.herokuapp.com/ListCompanies.png)
+![List Companies](https://mysterious-temple-73036.herokuapp.com/ListCompanies.png?s=200)
 
 * They can go to List Houses to view existing listed houses and further to New House to add a new house.
-![List Houses](https://mysterious-temple-73036.herokuapp.com/ListHouse.png)
+![List Houses](https://mysterious-temple-73036.herokuapp.com/ListHouse.png?s=200)
 
 * They can view all inquiries that have been asked by any buyer and also the replies by going to House Inquiries -> View Replies.
-![View Inquiries](https://mysterious-temple-73036.herokuapp.com/ViewInquiries.png)
+![View Inquiries](https://mysterious-temple-73036.herokuapp.com/ViewInquiries.png?s=200)
 
 * They can view the interested buyers.
-![Interested Buyers](https://mysterious-temple-73036.herokuapp.com/InterestedBuyers.png)
+![Interested Buyers](https://mysterious-temple-73036.herokuapp.com/InterestedBuyers.png?s=200)
 
 * They can add a house to the Intereset List which consists of the houses a user is interested in by going to List all buyers -> ADD House to interest list.
-![Interest List](https://mysterious-temple-73036.herokuapp.com/AddHouseInterestList.png)
+![Interest List](https://mysterious-temple-73036.herokuapp.com/AddHouseInterestList.png?s=200)
 
 
 ## Realtor Module:
