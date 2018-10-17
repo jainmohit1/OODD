@@ -5,6 +5,7 @@ A user trying to buy or sell a house, can easily do so using our application.
 ## Admin Username and Password (Please delete browser cookies)
 ###### Username - admin@ncsu.edu
 ###### Password - admin
+(Please do not update admin password while editing other attributes of Admin's profile. Else the admin won't be able to login with the same credentials. Appreciate your consideration!)
 
 #### Prerequisites
 
